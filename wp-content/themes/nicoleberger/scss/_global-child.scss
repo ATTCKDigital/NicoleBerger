@@ -82,14 +82,11 @@ article {
 	letter-spacing: inherit;
 }
 
-/**** Misc ****/
-
 // SVG sprite is hidden from the screen
 .svg-sprite {
 	height: 0;
 	overflow: hidden;
 }
-
 
 // Accessibility trick to hide span nearby with aria values
 .sr-only {
@@ -203,12 +200,22 @@ article {
 		margin: 0 auto;
 		margin-bottom: 24px;
 		width: 95%;
-		
+
 		em {
 			color: #787878;
 			display: block;
 			font-family: $secondaryRegular;
 			font-size: 16px;
+			padding-top: $gap;
+			text-align: left;
+
+		}
+
+		strong {
+			display: block;
+			font-family: $secondaryRegular;
+			font-size: 24px;
+			font-weight: normal;
 			padding-top: $gap;
 			text-align: left;
 		}
@@ -226,15 +233,18 @@ article {
 		background: #fff0e9;
 		bottom: 0;
 		display: none;
+		margin-right: -85vw;
 		position: fixed;
-		right: 0;
+		right: 66px;
 		top: 0;
 		transition: all .5s;
-		width: 66px;
+		width: 85vw;
 		z-index: 1000;
 
 		@include mediaquery(tablet-landscape) {
 			display: block;
+			margin-right: -30vw;
+			width: 30vw;
 		}
 
 		.navOpen & {
@@ -243,10 +253,12 @@ article {
 
 		.trayOpen & {
 			background: white;
-			width: 85vw;
+			margin-right: 0;
+			right: 0;
+			// width: 85vw;
 
 			@include mediaquery(tablet-landscape) {
-				width: 30vw;
+				// width: 30vw;
 			}
 		}
 
@@ -381,5 +393,15 @@ article {
 				}
 			}
 		}
+	}
+}
+
+.two-column-text {
+	@include mediaquery(tablet-portrait) {
+	    -webkit-column-count: 2;
+	    -moz-column-count: 2;
+	    -webkit-column-width: 40%;
+	    -moz-column-width: 40%;
+	    columns: 40% 2;
 	}
 }

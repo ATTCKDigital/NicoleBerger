@@ -18,7 +18,7 @@
 					<a href="/press">Press</a>
 				</li>
 				<li>
-					<a href="/Press">Videos</a>
+					<a href="/videos">Videos</a>
 				</li>
 				<li>
 					<a href="/gallery">Gallery</a>
@@ -32,6 +32,8 @@
 			?>
 			<img src="<?= $customLogoURL;?>" class="nav-logo" alt="<?= bloginfo('name');?>" title="<?= bloginfo('name');?>" />
 		</a>
+		<?php
+		/*
 		<nav class="main-nav">
 			<ul class="menu-items">
 				<?php
@@ -43,6 +45,8 @@
 				?>
 			</ul>
 		</nav>
+		*/
+		?>
 	</div>
 </header>
 <aside class="component-representation component" data-component-name="Representation">

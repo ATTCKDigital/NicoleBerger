@@ -113,6 +113,7 @@
 
 //Creates a larger target space for the hamburger. Apple's iPhone Human Interface Guidelines recommends a minimum target size of 44 pixels wide 44 pixels tall.
 .hamburger-wrapper {
+	// display: none; // TODO: Remove this after landing page launch. -DP
 	position: absolute;
 	left: 0;
 	height: 70px;
