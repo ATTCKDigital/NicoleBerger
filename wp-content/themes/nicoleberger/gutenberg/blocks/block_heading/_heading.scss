@@ -30,6 +30,24 @@
 	@include font-size($font-size-headline4);
 }	
 
+h3.is-style-headline4 {
+	background: #fff0e9;
+    display: inline-block;
+    text-align: center;
+    padding: 0 10px;
+
+	&:after {
+		border-bottom: 1px solid #dedede;
+		content: "";
+		display: inline-block;
+		left: 0;
+		position: absolute;
+		top: 50%;
+		width: 100%;
+		z-index: -1;
+	}
+}
+
 .headline5,
 .is-style-headline5 {
 	line-height: 1.3;
@@ -44,6 +62,11 @@
 	letter-spacing: .2px;
 	@include primary-semi;
 	@include font-size($font-size-headline6);
+}
+
+.component-heading {
+	position: relative;
+	text-align: center;
 }
 
 .component-heading.has-image {

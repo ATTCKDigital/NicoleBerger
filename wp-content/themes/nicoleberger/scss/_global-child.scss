@@ -60,6 +60,24 @@ h2.is-style-headline2 {
 	font-size: 24px;
 }
 
+// Notable films headlines
+h3.is-style-headline2 {
+	font-size: 3rem;
+
+	.notable-films-menu & {
+		br {
+			display: none;
+		}
+		
+		a {
+			border-bottom: 1px solid #dedede;
+			display: block;
+			margin-bottom: 20px;
+			padding-bottom: 20px;
+		}
+	}
+}
+
 main.content {
 	width: 100%;
 	// height: 100%;
@@ -199,7 +217,7 @@ article {
 	figcaption {
 		margin: 0 auto;
 		margin-bottom: 24px;
-		width: 95%;
+		width: 100%;
 
 		em {
 			color: #787878;
@@ -222,7 +240,7 @@ article {
 	}
 
 	img {
-		width: 95%;
+		width: 100%;
 	}
 }
 
@@ -291,7 +309,7 @@ article {
 					background: transparent url(../assets/images/arrow-left.svg) no-repeat;
 					content: '';
 					display: inline-block;
-					height: 14px;
+					height: 13px;
 					left: 10px;
 					position: relative;
 					top: 4px;
@@ -396,6 +414,40 @@ article {
 	}
 }
 
+.component-video-modal {
+	background: rgba(255, 255, 255, .8);
+	bottom: 0;
+	display: none;
+	left: 0;
+	position: fixed;
+	right: 0;
+	top: 0;
+	z-index: 1000;
+
+	.showVideoModal & {
+		display: block;
+	}
+
+	iframe {
+		height: 80vh;
+		margin-top: -25%;
+		position: relative;
+		top: 50%;
+		width: 100vw;
+	}
+
+	.video-close {
+		position: absolute;
+		right: 20px;
+		top: 20px;
+
+		img {
+			height: 20px;
+			width: 20px;
+		}
+	}
+}
+
 .two-column-text {
 	@include mediaquery(tablet-portrait) {
 	    -webkit-column-count: 2;
@@ -403,5 +455,11 @@ article {
 	    -webkit-column-width: 40%;
 	    -moz-column-width: 40%;
 	    columns: 40% 2;
+		column-count: 2;
+		column-gap: 60px;
 	}
+}
+
+mark {
+	background-color: transparent !important;
 }

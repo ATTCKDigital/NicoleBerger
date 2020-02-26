@@ -1,6 +1,6 @@
 <?php
-define('WPE_PROD', ''); //define the WPEngine environments
-define('WPE_STAGE', '');
+define('WPE_PROD', 'nicoleberger'); //define the WPEngine environments
+define('WPE_STAGE', 'nicolebstage');
 
 define('CHILD_THEME_DIR', get_stylesheet_directory()); // use when there are files that should ONLY be from the child theme.
 // Use locate_template() to include files.  This function first checks the child theme for the file and if there is none, uses the parent theme.
@@ -39,3 +39,22 @@ include_once(locate_template('config/theme-configs/author-slug.php'));
 // include_once(locate_template('config/theme-configs/password-protection.php'));
 // include_once(locate_template('config/theme-configs/wpml-language-switcher.php'));
 
+function enable_extended_upload ( $mime_types =array() ) {
+	// The MIME types listed here will be allowed in the media library.
+	// You can add as many MIME types as you want.
+	// $mime_types['gz']  = 'application/x-gzip';
+	// $mime_types['zip']  = 'application/zip';
+	// $mime_types['rtf'] = 'application/rtf';
+	// $mime_types['ppt'] = 'application/mspowerpoint';
+	// $mime_types['ps'] = 'application/postscript';
+	// $mime_types['flv'] = 'video/x-flv';
+	$mime_types['svg'] = 'image/svg-xml';
+
+	// If you want to forbid specific file types which are otherwise allowed,
+	// specify them here.  You can add as many as possible.
+	// unset( $mime_types['exe'] );
+	// unset( $mime_types['bin'] );
+	return $mime_types;
+}
+
+add_filter('upload_mimes', 'enable_extended_upload');

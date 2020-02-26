@@ -98,3 +98,9 @@
 		</ul>
 	</div>
 </aside>
+<div class="component-video-modal">
+	<a href="#close" class="video-close">
+		<img src="/wp-content/themes/nicoleberger/dist/assets/images/x.svg">
+	</a>
+	<iframe src=""></iframe>
+</div>

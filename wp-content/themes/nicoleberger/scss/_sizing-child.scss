@@ -31,7 +31,7 @@ $max-xl2					: 1439px;
 //Fixed row heights
 $small-row-mobile			: 50vh;
 $small-row					: 250px;
-$medium-row-mobile			: 100vh;
+$medium-row-mobile			: 70vh;
 $medium-row					: 500px;
 $large-row-mobile			: 70vh;
 $large-row					: 90vh;
@@ -69,12 +69,12 @@ $font-size-headline3: (
 );
 
 $font-size-headline4: (
-	'phone'				: 24px,
-	'tablet-portrait'	: 24px,
-	'tablet-landscape'	: 34px,
-	'desktop'			: 34px,
-	'xl'				: 34px,
-	'xl2'				: 34px,
+	'phone'				: 16px,
+	'tablet-portrait'	: 18px,
+	'tablet-landscape'	: 20px,
+	'desktop'			: 22px,
+	'xl'				: 24px,
+	'xl2'				: 26px,
 );
 
 $font-size-headline5: (

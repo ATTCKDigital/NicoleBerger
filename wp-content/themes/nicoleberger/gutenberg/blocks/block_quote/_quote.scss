@@ -1,0 +1,88 @@
+/**** Quote Block Styles ****/
+.component-quote {
+	text-align: center;
+
+	.quote-text {
+		color: color('text', 'body');
+		font-family: 'Austin Roman', Georgia, Times, serif;
+		font-size: px-to-rem(18px);
+		font-style: italic;
+		font-weight: 100;
+		line-height: 1.43;
+		letter-spacing: .5px;
+		margin-bottom: $gap*2;
+		text-align: center;
+		position: relative;
+
+		&:before {
+			color: #dedede;
+			content: '\201C';
+			font-size: px-to-rem(60px);
+			font-family: auto;
+			left: -12px;
+			line-height: .3;
+			position: relative;
+			top: 12px;
+		}
+
+		&:after {
+			bottom: -14px;
+			color: #dedede;
+			content: '\201D';
+			font-size: px-to-rem(60px);
+			font-family: auto;
+			line-height: .3;
+			position: relative;
+			right: -12px;
+		}
+
+		.featured & {
+			font-size: px-to-rem(28px);
+		}
+
+		br {
+			display: none;
+		}
+	}
+
+	.quote-source {
+		display: inline-block;
+		font-family: Lato, Helvetica, Arial, sans-serif;
+	    font-size: .9rem;
+		font-style: normal;
+		font-weight: 400;
+		letter-spacing: 2px;
+		margin-bottom: $gap;
+		margin-right: 5px;
+		text-transform: uppercase;
+
+		em {
+			font-style: normal;
+		}
+
+		&:after {
+			content: ', ';
+			display: inline-block;
+		}
+	}
+
+	.quote-company {
+		color: color('text', 'primary');
+		display: inline-block;
+	    font-size: .9rem;
+		font-family: Lato, Helvetica, Arial, sans-serif;
+		font-weight: 400;
+		letter-spacing: 2px;
+		text-transform: uppercase;
+
+		em {
+			font-style: normal;
+		}
+	}
+
+	.image-wrapper {
+		width: 54px;
+		height: 54px;
+		margin: 0 auto $gap;
+	}
+}

@@ -7,6 +7,33 @@ function Representation($el) {
 		console.log('/nicoleberger/components/component_representation/representation.js › Representation.bindEvents()');
 
 		$el.on('click', 'a', toggleTray);
+
+		// Hijack this for Vimeo link popups
+		bindVimeoLinks();
+	}
+
+	function bindVimeoLinks() {
+		console.log('bindVimeoLinks');
+
+		// Close modal
+		$('.component-video-modal .video-close').on('click', function () {
+			$('.component-video-modal iframe').attr('src', '');
+			$('body').removeClass('showVideoModal');
+		});
+
+		// $('a[href^="https://player.vimeo.com"]').on('mouseenter', function (e) {
+		// 	console.log('Vimeo link hovered, this.href: ', $(this).attr('href'));
+		// });
+
+		// Open modal
+		$('a[href^="https://player.vimeo.com"]').on('click', function (e) {
+			e.preventDefault();
+
+			// console.log('vimeo player clicked, this.href: ', $(this).attr('href'));
+
+			$('.component-video-modal iframe').attr('src', $(this).attr('href'));
+			$('body').addClass('showVideoModal');
+		});
 	}
 
 	function toggleTray(e) {

@@ -2,8 +2,38 @@ import $ from 'jquery';
 
 // Global Nav & Header behavior
 function Nav($el) {
+	console.log('themes/nicoleberger/components/component_nav/nav.js');
+
 	// Cache the body
 	var $body = $('body');
+
+	function bindEvents() {
+		$el = $el;
+		$el.find('.hamburger-wrapper').on('click', navToggle);
+
+		scrolledNav();
+
+		// Use this if subnav is triggered on hover
+		if ($(window).width() > 1024) {
+			$el.find('.menu-items > .menu-item-has-children').on('mouseenter', openSubNav);
+
+			// If we're hovering outside the nav, close the nav.
+			$(document).on('mouseover',function (e) {
+				let $target = $(e.target);
+
+				if (!$target.is('.main-header') && !$target.closest('.main-header').length) {
+					closeSubNav(e);
+				}
+
+				if (!$target.is('.menu-item-has-children') && !$target.closest('.menu-item-has-children').length) {
+					closeSubNav(e);
+				}
+			});
+		} else {
+			$el.find('.menu-item-has-children > a').on('click', toggleSubNav);
+
+		}
+	}
 
 	function navToggle() {
 		// Open nav on hamburger click
@@ -110,34 +140,6 @@ function Nav($el) {
 					$body.addClass('logoLight').removeClass('logoDark');
 			}
 		});
-	}
-
-	function bindEvents() {
-		$el = $el;
-		$el.find('.hamburger-wrapper').on('click', navToggle);
-
-		scrolledNav();
-
-		// Use this if subnav is triggered on hover
-		if ($(window).width() > 1024) {
-			$el.find('.menu-items > .menu-item-has-children').on('mouseenter', openSubNav);
-
-			// If we're hovering outside the nav, close the nav.
-			$(document).on('mouseover',function (e) {
-				let $target = $(e.target);
-
-				if (!$target.is('.main-header') && !$target.closest('.main-header').length) {
-					closeSubNav(e);
-				}
-
-				if (!$target.is('.menu-item-has-children') && !$target.closest('.menu-item-has-children').length) {
-					closeSubNav(e);
-				}
-			});
-		} else {
-			$el.find('.menu-item-has-children > a').on('click', toggleSubNav);
-
-		}
 	}
 
 	this.init = function ($el) {

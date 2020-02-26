@@ -41,13 +41,13 @@
 @mixin primary-semi {
 	font-family: $primarySemi;
 	font-style: normal;
-	font-weight: 600;
+	font-weight: 100;
 }
 
 @mixin primary-semi-italic {
 	font-family: $primarySemiItalic;
 	font-style: normal;
-	font-weight: 600;
+	font-weight: 100;
 }
 
 @mixin primary-bold {

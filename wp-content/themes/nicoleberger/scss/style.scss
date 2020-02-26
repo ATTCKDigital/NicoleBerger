@@ -43,7 +43,8 @@
 @import 'flexlayout/scss/_styleguide.scss';
 
 //Blocks
-@import 'flexlayout/gutenberg/blocks/block_quote/_quote.scss';
+// @import 'flexlayout/gutenberg/blocks/block_quote/_quote.scss';
+@import '../gutenberg/blocks/block_quote/_quote.scss';
 @import 'flexlayout/gutenberg/blocks/block_social_media/_social-media.scss';
 
 // Components
@@ -51,5 +52,4 @@
 @import '../components/component_footer/_footer.scss';
 @import 'flexlayout/components/component_archive-feed/_archive-feed.scss';
 @import 'flexlayout/components/component_share/_share.scss';
-@import 'flexlayout/gutenberg/blocks/block_quote/_quote.scss';
 @import 'flexlayout/gutenberg/blocks/block_video/_video.scss';

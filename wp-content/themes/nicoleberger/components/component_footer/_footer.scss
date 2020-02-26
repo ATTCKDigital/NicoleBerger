@@ -2,7 +2,6 @@
 //Override with custom styles in child theme
 
 .component-footer {
-
 	.menu-item {
 		display: block;
 		font-size: px-to-rem(16px);
@@ -17,4 +16,31 @@
 	.footer-link {
 		margin-bottom: $gap*.25;
 	}
+}
+
+h5.is-style-headline5 a,
+a.footer-link {
+    display: inline-block;
+    font-family: Lato,Helvetica,Arial,sans-serif;
+    font-size: 14.4px;
+    font-size: .9rem;
+    font-style: normal;
+    font-weight: 400;
+    letter-spacing: 2px;
+    margin-bottom: 4px;
+    margin-right: 4px;
+    text-transform: uppercase;
+}
+
+h6.is-style-headline5 a {
+	display: inline-block;
+    font-family: Lato,Helvetica,Arial,sans-serif;
+    font-size: 14.4px;
+	font-size: 1rem;
+    font-style: normal;
+    font-weight: 400;
+    letter-spacing: 2px;
+    margin-bottom: 4px;
+	margin-right: 14px;
+    text-transform: uppercase;
 }

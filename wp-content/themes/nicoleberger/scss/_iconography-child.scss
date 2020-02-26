@@ -131,18 +131,18 @@
 	display: block;
 	height: 18px;
 	border-radius: 0;
-	border-top: 2px solid $black;
+	border-top: 1px solid $black;
 	position: absolute;
-	right: 23px;
+	right: 8px;
 	top: 25px;
-	width: 24px;
+	width: 32px;
 	z-index: 100;
 	transition: background-color .2s ease-in, border-radius .2s ease-in;
 
 	&:after, &:before {
 		background-color: $black;
 		content: '';
-		height: 2px;
+		height: 1px;
 		left: 0;
 		position: absolute;
 		top: 6px;
