@@ -153,6 +153,7 @@
 
 	@include mediaquery(tablet-portrait)  {
 		height: $large-row;
+		min-height: 700px;
 	}
 
 	.wp-admin & {

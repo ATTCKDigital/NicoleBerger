@@ -166,6 +166,7 @@ article {
 
 		&:after {
 			background: url(../assets/images/Logo-animation.gif) no-repeat center center;
+			background-size: 80%;
 			bottom: 0;
 			content: '';
 			left: 0;
@@ -176,6 +177,10 @@ article {
 			top: 0;
 			transition: all 2s;
 			transition-delay: .5s;
+
+			@include mediaquery(tablet-portrait) {
+				background-size: auto;
+			}
 		}
 
 		&:before {
@@ -344,8 +349,12 @@ article {
 			font-size: 10px;
 			letter-spacing: 1px;
 			line-height: 16px;
-			margin: 20vh 0 0 $gap*10;
+			margin: 10vh 0 0 $gap*10;
 			text-transform: uppercase;
+
+			@include mediaquery-min-height(iPad) {
+				margin: 20vh 0 0 $gap*10;
+			}
 		}
 	}
 }

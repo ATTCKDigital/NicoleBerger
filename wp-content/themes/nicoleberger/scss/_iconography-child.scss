@@ -133,11 +133,19 @@
 	border-radius: 0;
 	border-top: 1px solid $black;
 	position: absolute;
-	right: 8px;
+	right: 29px;
 	top: 25px;
-	width: 32px;
+	width: 22px;
 	z-index: 100;
 	transition: background-color .2s ease-in, border-radius .2s ease-in;
+
+	@include mediaquery(phone)  {
+		right: 8px;
+		width: 32px;
+	}
+
+	@include mediaquery(tablet-portrait)  {
+	}
 
 	&:after, &:before {
 		background-color: $black;

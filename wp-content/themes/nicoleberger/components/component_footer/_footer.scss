@@ -36,11 +36,16 @@ h6.is-style-headline5 a {
 	display: inline-block;
     font-family: Lato,Helvetica,Arial,sans-serif;
     font-size: 14.4px;
-	font-size: 1rem;
+	font-size: .6rem;
     font-style: normal;
     font-weight: 400;
     letter-spacing: 2px;
     margin-bottom: 4px;
-	margin-right: 14px;
+	margin-right: 8px;
     text-transform: uppercase;
+
+    @include mediaquery(tablet-portrait) {
+		font-size: 1rem;
+		margin-right: 14px;
+    }
 }
