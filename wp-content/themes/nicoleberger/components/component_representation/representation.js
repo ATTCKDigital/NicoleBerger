@@ -8,6 +8,17 @@ function Representation($el) {
 
 		$el.on('click', 'a', toggleTray);
 
+		// Grab the mobile icon click
+		$('.icon-representation').on('click', function (e) {
+			e.preventDefault();
+
+			console.log('icon-representation clicked');
+
+			toggleTray(e);
+
+			$('.representation-container').trigger('click');
+		});
+
 		// Hijack this for Vimeo link popups
 		bindVimeoLinks();
 	}

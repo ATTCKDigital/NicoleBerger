@@ -87,7 +87,7 @@
 
 	.menu-items {
 		@include mediaquery-max-width(tablet-landscape) {
-			// Mobile only mediaquery so less overrides are necessary
+			// Mobile only mediaquery so fewer overrides are necessary
 			text-align: center;
 		}
 
@@ -98,9 +98,9 @@
 	}
 
 	.menu-item {
-		padding-bottom: 8px;
 		position: relative;
-		@include primary-bold;
+		@include primary-regular;
+		z-index: 2;
 
 		@include mediaquery-max-width(tablet-landscape) {
 			// Mobile only mediaquery so less overrides are necessary
@@ -113,7 +113,6 @@
 			// Large mobile + 
 			display: inline-block;
 			font-size: px-to-rem(16px);
-			margin-left: 30px;
 			opacity: 1;
 			transition: opacity .3s ease-in;
 		}
@@ -152,6 +151,124 @@
 				}
 			}
 		}
+	}
 
+	.icon-instagram,
+	.icon-representation {
+		position: absolute;
+		top: 44px;
+		right: 66px;
+
+		img {
+			width: 35px;
+		}
+	}
+
+	.icon-instagram {
+		display: none;
+
+		@include mediaquery(tablet-landscape) {
+			display: block;
+		}
+	}
+
+	.icon-representation {
+		top: 16px;
+		right: 24px;
+
+		@include mediaquery(tablet-landscape) {
+			display: none;
+		}
+	}
+}
+
+.component-nav-modal {
+    align-items: center;
+    background-color: rgba(0, 0, 0, .9);
+	bottom: 0;
+	color: white;
+	display: flex;
+    justify-content: center;
+	left: 0;
+	opacity: 0;
+	pointer-events: none;
+	position: fixed;
+	right: 0;
+	transition: all .5s;
+	top: 0;
+	z-index: 1001;
+
+	.navOpen & {
+		opacity: 1;
+		pointer-events: auto;
+	}
+
+	ul {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+		text-align: center;
+
+		li {
+			margin: 0;
+			padding: 2rem $gap;
+			text-align: center;
+
+			@include mediaquery(phone) {
+				padding: 3rem $gap;
+			}
+
+			@include mediaquery(tablet-landscape) {
+				display: inline-block;
+				padding: 0 $gap;
+			}
+
+			a {
+				font-family: $secondaryRegular;
+				font-size: 3rem;
+				text-transform: uppercase;
+				transition: all .2s;
+
+				@include mediaquery(phone) {
+					font-size: 3rem;
+				}
+
+				@include mediaquery(tablet-landscape) {
+					font-size: 4rem;
+				}
+
+				&:hover,
+				&.active {
+					color: black;
+					text-shadow: -1px -1px white, 1px -1px white, -1px 1px white, 1px 1px white;
+				}
+			}
+		}
+	}
+
+	.menu-item-background {
+		display: none;
+		height: auto;
+		left: 25vw;
+		margin-top: -20%;
+		opacity: 0;
+		position: absolute;
+		top: 50vh;
+		transition: opacity .2s;
+		width: 50vw;
+
+		&.active,
+		&.current {
+			opacity: 1;
+			z-index: -2;
+		}
+
+		&.active {
+			z-index: -1
+		}
+
+		@include mediaquery(tablet-portrait) {
+			display: block;
+		}
 	}
 }

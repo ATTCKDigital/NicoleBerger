@@ -219,6 +219,34 @@ article {
 
 // Using specificitiy hack
 .component-image.component-image {
+	a[href*=vimeo] {
+		display: block;
+		position: relative;
+
+		&:before {
+			background: rgba(0, 0, 0, .5) url(../dist/assets/images/_icon-play.svg) center center no-repeat;
+			border: 2px solid rgba(255, 255, 255, .5);
+			border-radius: 40px;
+			bottom: 21px;
+			content: "";
+			display: block;
+			height: 46px;
+			position: absolute;
+			right: 22px;
+			width: 46px;
+
+			&:hover {
+				border-color: rgba(255, 255, 255, .8);
+			}
+		}
+
+		&:hover {
+			&:before {
+				border-color: rgba(255, 255, 255, .8);
+			}
+		}
+	}
+
 	figcaption {
 		margin: 0 auto;
 		margin-bottom: 24px;
@@ -255,19 +283,19 @@ article {
 	&.component {
 		background: #fff0e9;
 		bottom: 0;
-		display: none;
-		margin-right: -85vw;
+		margin-right: -100vw;
 		position: fixed;
-		right: 66px;
+		right: 0;
 		top: 0;
 		transition: all .5s;
-		width: 85vw;
+		width: 100vw;
 		z-index: 1000;
 
 		@include mediaquery(tablet-landscape) {
 			display: block;
-			margin-right: -30vw;
-			width: 30vw;
+			margin-right: -45vw;
+			right: 66px;
+			width: 45vw;
 		}
 
 		.navOpen & {
@@ -350,74 +378,45 @@ article {
 			letter-spacing: 1px;
 			line-height: 16px;
 			margin: 10vh 0 0 $gap*10;
+			position: relative;
 			text-transform: uppercase;
 
 			@include mediaquery-min-height(iPad) {
-				margin: 20vh 0 0 $gap*10;
+				margin: 20vh 0 0 68px;
 			}
 		}
 	}
 }
 
-.component-nav-modal {
-    align-items: center;
-    background-color: rgba(0, 0, 0, .9);
-	bottom: 0;
-	color: white;
-	display: flex;
-    justify-content: center;
-	left: 0;
-	opacity: 0;
-	pointer-events: none;
-	position: fixed;
-	right: 0;
-	transition: all .5s;
-	top: 0;
-	z-index: 1001;
-
-	.navOpen & {
-		opacity: 1;
-		pointer-events: auto;
+.component-representation-footer {
+	&.component h3 {
+		color: #181818;
+		font-family: Helvetica;
+		font-size: 12px;
+		letter-spacing: 2px;
+		line-height: 16px;
+		padding-bottom: 12px;
 	}
 
-	ul {
-		list-style: none;
-		margin: 0;
-		padding: 0;
+	li {
+		float: left;
+		margin-bottom: 20px;
+	}
 
-		li {
-			margin: 0;
-			padding: 2rem $gap;
-			text-align: center;
+	.pCount1 {
+		@include mediaquery(tablet-portrait) {
+			float: left;
+			width: 50%;
+		}
+	}
 
-			@include mediaquery(phone) {
-				padding: 3rem $gap;
-			}
+	.pCount2 {
+		@include mediaquery(tablet-portrait) {
+			width: 100%;
 
-			@include mediaquery(tablet-landscape) {
-				display: inline-block;
-				padding: 0 $gap;
-			}
-
-			a {
-				font-family: $secondaryRegular;
-				font-size: 3rem;
-				text-transform: uppercase;
-				transition: all .2s;
-
-				@include mediaquery(phone) {
-					font-size: 3rem;
-				}
-
-				@include mediaquery(tablet-landscape) {
-					font-size: 4rem;
-				}
-
-				&:hover,
-				&.active {
-					color: black;
-					text-shadow: -1px -1px white, 1px -1px white, -1px 1px white, 1px 1px white;
-				}
+			p {
+				float: left;
+				width: 50%;
 			}
 		}
 	}
@@ -471,4 +470,12 @@ article {
 
 mark {
 	background-color: transparent !important;
+}
+
+#sb_instagram #sbi_load {
+    display: none!important
+}
+
+.widthAuto img {
+    width: auto!important
 }

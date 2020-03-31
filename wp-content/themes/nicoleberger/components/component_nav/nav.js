@@ -2,12 +2,14 @@ import $ from 'jquery';
 
 // Global Nav & Header behavior
 function Nav($el) {
-	console.log('themes/nicoleberger/components/component_nav/nav.js');
+	console.log('loaded', '/nicoleberger/components/component_nav/nav.js');
 
 	// Cache the body
 	var $body = $('body');
 
 	function bindEvents() {
+		console.log('/nicoleberger/\tcomponents/\tcomponent_nav/\tnav.js › bindEvents()');
+
 		$el = $el;
 		$el.find('.hamburger-wrapper').on('click', navToggle);
 
@@ -31,8 +33,16 @@ function Nav($el) {
 			});
 		} else {
 			$el.find('.menu-item-has-children > a').on('click', toggleSubNav);
-
 		}
+
+
+		// Toggle background image on modal nav hover
+		$('.component-nav-modal').on('mouseenter', 'li', function () {
+			console.log($(this).text());
+
+			$('.menu-item-background').removeClass('active');
+			$('.menu-item-background[data-page=' + $(this).text().replace(' ',  '') + ']').addClass('active');
+		});
 	}
 
 	function navToggle() {
