@@ -375,14 +375,35 @@ article {
 		ul {
 			color: #181818;
 			font-size: 10px;
+			height: 90vh;
 			letter-spacing: 1px;
 			line-height: 16px;
 			margin: 10vh 0 0 $gap*10;
+			overflow-y: auto;
 			position: relative;
 			text-transform: uppercase;
 
 			@include mediaquery-min-height(iPad) {
+				height: 80vh;
 				margin: 20vh 0 0 68px;
+			}
+
+			&:after {
+				background-image: linear-gradient(0deg, white, transparent);
+				bottom: 0;
+				content: '';
+				height: 5vh;
+				opacity: 0;
+				pointer-events: none;
+				position: fixed;
+				right: 0;
+				transition: opacity 1s;
+				width: 45vw;
+				z-index: 9;
+
+				.trayOpen & {
+					opacity: 1;
+				}
 			}
 		}
 	}
